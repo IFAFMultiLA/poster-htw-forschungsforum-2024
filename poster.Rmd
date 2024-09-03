@@ -1,8 +1,4 @@
 ---
-main_topsize: 0.2
-main_bottomsize: 0.1
-poster_width: "841mm"
-poster_height: "1189mm"
 title: "The MultiLA software platform"
 author:
   - name: "Markus Konrad"
@@ -31,6 +27,16 @@ main_findings:
 logoleft_name: "img/htw_logo.jpg"
 logoright_name: "img/hwr_logo.png"
 logocenter_name: "img/ifaf_logo.jpg"
+poster_width: "841mm"
+poster_height: "1189mm"
+main_topsize: 0.2
+main_bottomsize: 0.1
+main_fontfamily: 'BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif'
+main_textcol: "#ffffff"
+font_family: 'BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif'
+primary_colour: "#5faaea"
+secondary_colour: "#5faaea"   # "#e5f1fb"
+accent_colour: "#3eaf7c"
 output: 
   posterdown::posterdown_betterport:
     self_contained: true
