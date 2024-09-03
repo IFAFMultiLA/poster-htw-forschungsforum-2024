@@ -29,9 +29,10 @@
 %\usepackage{times} % Use the times font
 \usepackage{palatino} % Uncomment to use the Palatino font
 
-\usepackage[german]{babel}
+\usepackage[ngerman]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage[german=quotes]{csquotes}
+
 
 \usepackage{graphicx} % Required for including images
 \graphicspath{{figures/}} % Location of the graphics files
@@ -43,6 +44,7 @@
 \usepackage{wrapfig} % Allows wrapping text around tables and figures
 \usepackage[export]{adjustbox}
 
+%\renewcommand\harvardand{und}
 \renewcommand\refname{Referenzen}
 
 \begin{document}
@@ -153,7 +155,7 @@ Eine Datenaufzeichnung erfolgt nur nach Zustimmung und komplett anonym. Dabei wi
 Die Nutzungsdaten werden im Backend gespeichert und können auch über den geschützten Administrationsbereich heruntergeladen werden. Für die Verarbeitung der komplexen und umfangreichen Daten (bspw. Mausbewegungspfade) stellen wir fertige Analyseskripte in R zur Verfügung.
 
 \begin{center}\vspace{1cm}
-\includegraphics[width=0.6\linewidth]{figtraj-1}
+\includegraphics[width=0.5\linewidth]{figtraj-1}
 \captionof{figure}{Klicks und \enquote{Heatmap} einer App}
 \end{center}\vspace{1cm}
 
@@ -188,10 +190,22 @@ Die Nutzungsdaten werden im Backend gespeichert und können auch über den gesch
 
 Im Rahmen des Forschungsprojekts wurden zahlreiche interaktive Apps für die Lehre in Statistik und Data Science entwickelt. Die abgedeckten Themen umfassen u.a. Wahrscheinlichkeitstheorie, diskrete und stetige Wahrscheinlichkeitsverteilungen oder Benfords Gesetz. Sämtliche Apps wurden bereits in der Lehre eingesetzt.
 
-\begin{center}\vspace{1cm}
-\includegraphics[width=0.6\linewidth]{wvstetig}
-\captionof{figure}{Beispiel einer Lernanwendung mit interaktiver Grafik}
-\end{center}\vspace{1cm}
+\vspace{1cm}
+
+\begin{figure}[H]
+\hfill
+\begin{subfigure}[h]{0.6\linewidth}
+\includegraphics[width=\linewidth]{wvstetig}
+\caption{Beispiel einer Lernanwendung mit interaktiver Grafik}
+\end{subfigure}
+\hfill
+\begin{subfigure}[h]{0.3\linewidth}
+\includegraphics[width=\linewidth]{summarypanel_scrolldist}  %TODO Titel in Grafik, Grafik auf deutsch
+\caption{Ergebnis eines A/B-Experiments: Scrolldistanz pro Minute in Gruppe mit und ohne Zusammenfassungsleiste.}
+\end{subfigure}
+\hfill
+\end{figure}
+
 
 \section*{Erste Auswertungen}
 
@@ -204,11 +218,10 @@ In den vergangenen zwei Semestern wurden die Apps in der Lehre eingesetzt, Daten
 % umfragen, experimente
 % limitationen! auswertungen 
 
- %----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
 %	REFERENCES
 %----------------------------------------------------------------------------------------
 
-\nocite{*} % Print all references regardless of whether they were cited in the poster or not
 \bibliographystyle{plain} % Plain referencing style
 \bibliography{references} % Use the example bibliography file sample.bib
 
