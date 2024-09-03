@@ -1,0 +1,164 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% a0poster Portrait Poster
+% LaTeX Template
+% Version 1.0 (22/06/13)
+%
+% The a0poster class was created by:
+% Gerlinde Kettl and Matthias Weiser (tex@kettl.de)
+% 
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[a0,portrait]{a0poster}
+
+\usepackage{multicol} % This is so we can have multiple columns of text side-by-side
+\columnsep=100pt % This is the amount of white space between the columns in the poster
+\columnseprule=3pt % This is the thickness of the black line between the columns in the poster
+
+\usepackage[svgnames]{xcolor} % Specify colors by their 'svgnames', for a full list of all colors available see here: http://www.latextemplates.com/svgnames-colors
+
+\usepackage{times} % Use the times font
+%\usepackage{palatino} % Uncomment to use the Palatino font
+
+\usepackage{graphicx} % Required for including images
+\graphicspath{{figures/}} % Location of the graphics files
+\usepackage{booktabs} % Top and bottom rules for table
+\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
+\usepackage{amsfonts, amsmath, amsthm, amssymb} % For math fonts, symbols and environments
+\usepackage{wrapfig} % Allows wrapping text around tables and figures
+
+\renewcommand\refname{Referenzen}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	POSTER HEADER 
+%----------------------------------------------------------------------------------------
+
+% The header is divided into two boxes:
+% The first is 75% wide and houses the title, subtitle, names, university/organization and contact information
+% The second is 25% wide and houses a logo for your university/organization or a photo of you
+% The widths of these boxes can be easily edited to accommodate your content as you see fit
+
+\begin{minipage}[b]{0.75\linewidth}
+\veryHuge \color{NavyBlue} \textbf{Die MultiLA Softwareplattform} \color{Black}\\ % Title
+\Huge\textit{Authoring Software und Learning Analytics für interaktive Lernanwendungen im Bereich Statistik und Data Science}\\[2cm] % Subtitle
+\huge Markus Konrad MSc.\textsuperscript{1,2},
+Prof. Dr. Maria Osipenko\textsuperscript{2},
+Prof. Dr. Martin Spott\textsuperscript{1},
+Prof.~Dr.~Andre Beinrucker\textsuperscript{1}\\[0.5cm] % Author(s)
+\large \textsuperscript{1}Hochschule für Technik und Wirtschaft Berlin, \textsuperscript{2}Hochschule für Wirtschaft und Recht Berlin\\[0.4cm] % University/organization
+%\Large \texttt{john@LaTeXTemplates.com} --- 1 (000) 111 1111\\
+\end{minipage}
+%
+\begin{minipage}[b]{0.25\linewidth}
+% TODO: QR Code hier
+% TODO: HTW, HWR, IFAF Logos ganz unten
+\includegraphics[width=20cm]{logo.png}\\
+\end{minipage}
+
+\vspace{1cm} % A bit of extra whitespace between the header and poster content
+
+%----------------------------------------------------------------------------------------
+
+\begin{multicols}{2} % This is how many columns your poster will be broken into, a portrait poster is generally split into 2 columns
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+\color{Navy} % Navy color for the abstract
+
+\begin{abstract}
+
+TODO
+
+\end{abstract}
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+
+\color{DarkSlateGray} % DarkSlateGray color for the rest of the content
+
+\section*{Einleitung}
+
+Mittels der \textit{MultiLA Softwareplattform} ist es möglich, web-basierte, interaktive Lernanwendungen zu entwickeln, diese den Studierenden zur Verfügung zu stellen und auf datenschutzkonformeweise Interaktionsdaten der Studierenden mit den Lernanwendungen zu sammeln sowie Experimente durchzuführen. Damit werden drei Ziele erreicht:
+
+\begin{itemize}
+    \item Verbesserung der Lehre durch innovative, interaktive Lernanwendungen,
+    \item Unterstützung der Forschung im Bereich Learning Analytics,
+    \item Verbesserung der Lernanwendungen durch den aus den Daten gewonnenen Erkenntnissen.
+\end{itemize}
+
+Die Softwareplattform wurde im Rahmen des IFAF MultiLA-Projekts an der HTW Berlin und der HWR Berlin entwickelt und steht komplett als Open Source Softwarepaket zur Verfügung.
+
+\subsection*{Features}
+
+\begin{itemize}
+    \item Erstellung interaktiver Lernanwendungen mittels \textit{RMarkdown} oder als \textit{Shiny}-Anwendungen
+    \item Hoch granulare, konfigurierbare und anonyme Nachverfolgung von Benutzerinteraktionen mit den Lernanwendungen: Mausbewegungen, Klicks, Einreichen von Übungen usw.
+    \item Unterstützung von A/B-Testexperimenten und integrierten Umfragen
+    \item Konfigurierbare Lernanwendungen: Basisanwendungen einmal schreiben, Varianten über Konfigurationen erstellen
+    \item Dynamische Zusammenfassungsleiste für Lernanwendungen
+    \item Webbasierte Administrationsoberfläche zum Veröffentlichen von Lernanwendungen, Einrichten von Varianten und Experimenten sowie Herunterladen gesammelter Daten
+    \item Datenaufbereitungs- und Analyseskripte
+    \item Datenschutzkonforme, selbst gehostete Lösung
+\end{itemize}
+
+\section*{Von der Lernanwendung zu Learning Analytics}
+
+\subsection*{1. Lernanwendungen erstellen}
+
+Der inhaltliche Rahmen liegt auf dem Bereich Statistik, Mathematik und Data Science. In diesem Bereich ist die Nutzung der Programmiersprache \textit{R} sowohl unter Lehrenden als auch in den Curricula sehr ausgeprägt, weshalb zur Erstellung der Lernanwendungen \textit{R-Markdown} in Kombination mit \textit{RStudio} zum Einsatz kommen.
+
+\subsection*{2. Lernanwendungen bereitstellen}
+
+TODO
+
+\subsection*{3. Nutzungsdaten sammeln und auswerten}
+
+TODO
+
+\section*{Hintergrund}
+
+\subsection*{Softwarearchitektur}
+
+TODO
+
+\subsection*{Erstellte Lernanwendungen}
+
+TODO
+
+\subsection*{Erste Auswertungen}
+
+TODO
+
+\section*{Fazit und Ausblick}
+
+
+\begin{center}\vspace{1cm}
+\includegraphics[width=0.8\linewidth]{placeholder}
+\captionof{figure}{\color{Green} Figure caption}
+\end{center}\vspace{1cm}
+
+ %----------------------------------------------------------------------------------------
+%	REFERENCES
+%----------------------------------------------------------------------------------------
+
+\nocite{*} % Print all references regardless of whether they were cited in the poster or not
+\bibliographystyle{plain} % Plain referencing style
+\bibliography{sample} % Use the example bibliography file sample.bib
+
+
+\end{multicols}
+\end{document}
