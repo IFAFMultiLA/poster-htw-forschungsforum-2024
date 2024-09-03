@@ -1,5 +1,5 @@
 ---
-title: "The MultiLA software platform"
+title: "Die MultiLA Softwareplattform"
 author:
   - name: "Markus Konrad"
     affil: 1
@@ -23,7 +23,7 @@ affiliation:
   - num: 2
     address: Hochschule für Wirtschaft und Recht Berlin
 main_findings:
-  - "Authoring and learning analytics for e-learning applications in data science education"
+  - "Authoring Software und Learning Analytics für interaktive Lernanwendungen im Bereich Statistik und Data Science"
 logoleft_name: "img/htw_logo.jpg"
 logoright_name: "img/hwr_logo.png"
 logocenter_name: "img/ifaf_logo.jpg"
@@ -57,70 +57,58 @@ knitr::opts_chunk$set(echo = FALSE,
 options(knitr.table.format = "html") 
 ```
 
-# Introduction
+# Einleitung
 
-This is the `posterdown_betterport` template for the {posterdown} package! I was inspired by the twitter thread of [Mike Morrison](https://mobile.twitter.com/mikemorrison/status/1110191245035479041) and wanted to apply the `#betterposter` concept to the reproducible (yet simple to use) functionality of the {posterdown} package [@R-posterdown]. If you're not an R user don't sweat as you do **NOT** need to use it at all! Feel free to use only the Markdown functionality of this package :)
+Mittels der *MultiLA Softwareplattform* ist es möglich, web-basierte, interaktive Lernanwendungen zu entwickeln, diese den Studierenden zur Verfügung zu stellen und auf datenschutzkonformeweise Interaktionsdaten der Studierenden mit den Lernanwendungen zu sammeln sowie Experimente durchzuführen. Damit werden drei Ziele erreicht:
 
-```{r, include=FALSE}
-knitr::write_bib(c('posterdown', 'rmarkdown','pagedown'), 'packages.bib')
-```
+- Verbesserung der Lehre durch innovative, interaktive Lernanwendungen,
+- Unterstützung der Forschung im Bereich Learning Analytics,
+- Verbesserung der Lernanwendungen durch den aus den Daten gewonnenen Erkenntnissen.
 
-## Objectives
+Diese Softwareplattform wurde im Rahmen des IFAF MultiLA-Projekts an der HTW Berlin und der HWR Berlin entwickelt und steht komplett als Open Source Softwarepaket zur Verfügung.
 
-1. Pick a template layout.
-2. Write/ create your poster content distraction free.
-3. Let posterdown do its thing!
+TODOs:
 
-# Methods
+- QR Code
 
-I will show here how to include poster elements that may be useful, such as an equation using mathjax:
+## Features
 
-$$
-E = mc^2
-$$
+- Erstellung interaktiver Lernanwendungen mittels *RMarkdown* oder als *Shiny*-Anwendungen
+- Hoch granulare, konfigurierbare und anonyme Nachverfolgung von Benutzerinteraktionen mit den Lernanwendungen: Mausbewegungen, Klicks, Einreichen von Übungen usw.
+- Unterstützung von A/B-Testexperimenten und integrierten Umfragen
+- Konfigurierbare Lernanwendungen: Basisanwendungen einmal schreiben, Varianten über Konfigurationen erstellen
+- Dynamische Zusammenfassungsleiste für Lernanwendungen
+- Webbasierte Administrationsoberfläche zum Veröffentlichen von Lernanwendungen, Einrichten von Varianten und Experimenten sowie Herunterladen gesammelter Daten
+- Datenaufbereitungs- und Analyseskripte
+- Datenschutzkonforme, selbst gehostete Lösung
 
-To reference a citation you can add your `.bib` file to the working directory and name it in the YAML metadata or generate an automated one as done here, then you only need to reference the label value in the `.bib` file. For example this package is built on top of the wonderful {pagedown} package and I will cite it at the end of this sentance using this in the rmd `[@R-pagedown]` [@R-pagedown].
+# Von der Lernanwendung zu Learning Analytics
 
-To get a better understanding of how to include features like these please refer to the {posterdown} [wiki](https://github.com/posterdown/wiki).
+## 1. Lernanwendungen erstellen
 
-**_Now on to the results!_**
+Der inhaltliche Rahmen liegt auf dem Bereich Statistik, Mathematik und Data Science. In diesem Bereich ist die Nutzung der Programmiersprache *R* sowohl unter Lehrenden als auch in den Curricula sehr ausgeprägt, weshalb zur Erstellung der Lernanwendungen *R-Markdown* in Kombination mit *RStudio* zum Einsatz kommen.
 
-# Results
+## 2. Lernanwendungen bereitstellen
 
-Here you may have some figures to show off, bellow I have made a scatterplot with the infamous Iris dataset and I can even reference to the figure automatically like this, `Figure \@ref(fig:irisfigure)`, Figure \@ref(fig:irisfigure).
+TODO
 
-```{r, irisfigure, fig.cap='Here is a caption for the figure. This can be added by using the "fig.cap" option in the r code chunk options, see this [link](https://yihui.name/knitr/options/#plots) from the legend himself, [Yihui Xie](https://twitter.com/xieyihui).', out.width="80%"}
-par(mar=c(2,2,0,1))
-plot(x = iris$Sepal.Length, y = iris$Sepal.Width,
-     col = iris$Species, pch = 19, xlab = "Sepal Length",
-     ylab = "Sepal Width")
-```
+## 3. Nutzungsdaten sammeln und auswerten 
 
-Maybe you want to show off some of that fancy code you spent so much time on to make that figure, well you can do that too! Just use the `echo=TRUE` option in the r code chunk options, Figure \@ref(fig:myprettycode)!
+TODO
 
-```{r myprettycode, echo=TRUE, fig.cap='Boxplots, so hot right now!', fig.height=6, out.width="80%"}
-#trim whitespace
-par(mar=c(2,2,0,0))
-#plot boxplots
-boxplot(iris$Sepal.Width~iris$Species,
-        col = "#008080", 
-        border = "#0b4545",
-        ylab = "Sepal Width (cm)",
-        xlab = "Species")
-```
+# Hintergrund
 
-How about a neat table of data? See, Table \@ref(tab:iristable):
+## Softwarearchitektur
 
-```{r, iristable}
-knitr::kable(
-  iris[1:15,1:5], format = "html",
-  caption = "A table made with the **knitr::kable** function.",
-  align = "c", col.names = c("Sepal <br> Length",
-                             "Sepal <br> Width",
-                             "Petal <br> Length",
-                             "Petal <br> Width",
-                             "Species"),
-  escape = FALSE)
-```
+TODO
 
-# References
+## Erstellte Lernanwendungen
+
+TODO
+
+## Erste Auswertungen
+
+TODO
+
+
+# Referenzen
