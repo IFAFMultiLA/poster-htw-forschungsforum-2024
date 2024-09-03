@@ -26,8 +26,12 @@
 
 \usepackage[svgnames]{xcolor} % Specify colors by their 'svgnames', for a full list of all colors available see here: http://www.latextemplates.com/svgnames-colors
 
-\usepackage{times} % Use the times font
-%\usepackage{palatino} % Uncomment to use the Palatino font
+%\usepackage{times} % Use the times font
+\usepackage{palatino} % Uncomment to use the Palatino font
+
+\usepackage[german]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[german=quotes]{csquotes}
 
 \usepackage{graphicx} % Required for including images
 \graphicspath{{figures/}} % Location of the graphics files
@@ -90,25 +94,25 @@ Interaktive Lernanwendungen erweisen sich als nützliche Ergänzung zu Lehrmater
 
 \section*{Einleitung}
 
-Mittels der \textit{MultiLA Softwareplattform} ist es möglich, web-basierte, interaktive Lernanwendungen zu entwickeln, diese den Studierenden zur Verfügung zu stellen und auf datenschutzkonformeweise Interaktionsdaten der Studierenden mit den Lernanwendungen zu sammeln sowie Experimente durchzuführen. Damit werden drei Ziele erreicht:
+Mittels der \textit{MultiLA Softwareplattform} ist es möglich, web-basierte, interaktive Lernanwendungen (im folgenden nur kurz \enquote{App} bezeichnet) zu entwickeln, diese den Studierenden zur Verfügung zu stellen und auf datenschutzkonformeweise Interaktionsdaten der Studierenden mit den Apps zu sammeln sowie Experimente durchzuführen. Damit werden drei Ziele erreicht:
 
 \begin{itemize}
     \item Verbesserung der Lehre durch innovative, interaktive Lernanwendungen,
     \item Unterstützung der Forschung im Bereich Learning Analytics,
-    \item Verbesserung der Lernanwendungen durch den aus den Daten gewonnenen Erkenntnissen.
+    \item Verbesserung der Apps durch den aus den Daten gewonnenen Erkenntnissen.
 \end{itemize}
 
-Die Softwareplattform wurde im Rahmen des IFAF MultiLA-Projekts an der HTW Berlin und der HWR Berlin entwickelt und steht komplett als Open Source Softwarepaket zur Verfügung.
+Die Softwareplattform wurde im Rahmen des IFAF MultiLA-Projekts an der HTW Berlin und der HWR Berlin entwickelt und steht komplett als Open Source Softwarepaket zur Verfügung. Das Projekt wurde bereits im Rahmen der \textit{UseR! Conference 2024} \cite{userconf24} vorgestellt. Ein wissenschaftlicher Artikel befindet sich gerade im Einreichungsprozess.
 
 \subsection*{Features}
 
 \begin{itemize}
-    \item Erstellung interaktiver Lernanwendungen mittels \textit{RMarkdown} oder als \textit{Shiny}-Anwendungen
-    \item Hoch granulare, konfigurierbare und anonyme Nachverfolgung von Benutzerinteraktionen mit den Lernanwendungen: Mausbewegungen, Klicks, Einreichen von Übungen usw.
+    \item Erstellung interaktiver Apps mittels \textit{RMarkdown} oder als \textit{Shiny}-Anwendungen
+    \item Hoch granulare, konfigurierbare und anonyme Nachverfolgung von Benutzerinteraktionen mit den Apps: Mausbewegungen, Klicks, Einreichen von Übungen usw.
     \item Unterstützung von A/B-Testexperimenten und integrierten Umfragen
-    \item Konfigurierbare Lernanwendungen: Basisanwendungen einmal schreiben, Varianten über Konfigurationen erstellen
-    \item Dynamische Zusammenfassungsleiste für Lernanwendungen
-    \item Webbasierte Administrationsoberfläche zum Veröffentlichen von Lernanwendungen, Einrichten von Varianten und Experimenten sowie Herunterladen gesammelter Daten
+    \item Konfigurierbare Apps: Basisanwendungen einmal schreiben, Varianten über Konfigurationen erstellen
+    \item Dynamische Zusammenfassungsleiste für Apps
+    \item Webbasierte Administrationsoberfläche zum Veröffentlichen von Apps, Einrichten von Varianten und Experimenten sowie Herunterladen gesammelter Daten
     \item Datenaufbereitungs- und Analyseskripte
     \item Datenschutzkonforme, selbst gehostete Lösung
 \end{itemize}
@@ -117,7 +121,7 @@ Die Softwareplattform wurde im Rahmen des IFAF MultiLA-Projekts an der HTW Berli
 
 \subsection*{1. Lernanwendungen erstellen}
 
-Der inhaltliche Rahmen liegt auf dem Bereich Statistik, Mathematik und Data Science. In diesem Bereich ist die Nutzung der Programmiersprache \textit{R} sowohl unter Lehrenden als auch in den Curricula sehr ausgeprägt, weshalb zur Erstellung der Lernanwendungen \textit{RMarkdown} in Kombination mit \textit{RStudio} zum Einsatz kommen. Über einen Editor lassen sich Text, Formeln, Grafiken, Quizaufgaben und Code-Übungen einfügen. Komplexere interaktive Erklärelemente lassen sich mit \textit{Shiny} programmieren und direkt einbetten.
+Der inhaltliche Rahmen liegt auf dem Bereich Statistik, Mathematik und Data Science. In diesem Bereich ist die Nutzung der Programmiersprache \textit{R} sowohl unter Lehrenden als auch in den Curricula sehr ausgeprägt, weshalb zur Erstellung der Apps \textit{RMarkdown} in Kombination mit \textit{RStudio} zum Einsatz kommen. Über einen Editor lassen sich Text, Formeln, Grafiken, Quizaufgaben und Code-Übungen einfügen. Komplexere interaktive Erklärelemente lassen sich mit \textit{Shiny} programmieren und direkt einbetten.
 
 \begin{center}\vspace{1cm}
 \includegraphics[width=0.6\linewidth]{at-visual-smaller}
@@ -126,7 +130,7 @@ Der inhaltliche Rahmen liegt auf dem Bereich Statistik, Mathematik und Data Scie
 
 \subsection*{2. Lernanwendungen bereitstellen}
 
-TODO
+Die entwickelte App kann im Anschluss auf einem Server bereitgestellt werden. Unser Administrationsbackend erlaubt es verschiedene Varianten der selben App mittels Konfigurationen bereitzustellen. Zudem können Experimente in Form von A/B-Tests erstellt werden um mehrere Apps oder Varianten mittels Zufallszuordnung miteinander verglichen werden. Zudem lässt sich zur Datenminimierung exakt einstellen, welche Art von Daten während der Nutzung der Apps gesammelt werden. Es wird schließlich ein Link erzeugt, den Lehrende an ihre Studierenden verteilen können.
 
 Eine Datenaufzeichnung erfolgt nur nach Zustimmung und komplett anonym. Die Lernanwendung lässt sich selbstverständlich auch ohne Zustimmung zur Datenaufzeichnung verwenden.
 
@@ -152,7 +156,7 @@ TODO
 
 \begin{center}\vspace{1cm}
 \includegraphics[width=0.7\linewidth]{wvstetig}
-\captionof{figure}{Beispiel einer Lernanwendung mit interaktiver Grafik zum Thema stetige Wahrscheinlichkeitsverteilungen}
+\captionof{figure}{Beispiel einer Lernanwendung mit interaktiver Grafik}
 \end{center}\vspace{1cm}
 
 \subsection*{Erste Auswertungen}
@@ -171,8 +175,20 @@ TODO
 
 \nocite{*} % Print all references regardless of whether they were cited in the poster or not
 \bibliographystyle{plain} % Plain referencing style
-\bibliography{sample} % Use the example bibliography file sample.bib
-
+\bibliography{references} % Use the example bibliography file sample.bib
 
 \end{multicols}
+
+\vspace{3cm}
+
+\begin{minipage}[b]{0.33\linewidth}
+\includegraphics[width=10cm,left]{htw_logo.jpg}
+\end{minipage}
+\begin{minipage}[b]{0.34\linewidth}
+\includegraphics[width=10cm,center]{ifaf_logo.jpg}
+\end{minipage}
+\begin{minipage}[b]{0.33\linewidth}
+\includegraphics[width=15cm,right]{hwr_logo.png}
+\end{minipage}
+
 \end{document}
