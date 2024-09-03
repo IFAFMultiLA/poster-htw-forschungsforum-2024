@@ -1,0 +1,19 @@
+.main {
+    color: #ffffff !important;
+}
+
+.main_bottom {
+    height: calc(1189mm * 0.09 - 30mm) !important;
+    margin-top: calc(1189mm * (1 - 0.09)) !important;
+    border-top: 30mm solid #5faaea !important;
+    background-image: none !important;
+    background-color: #ffffff !important;
+}
+
+#title {
+    display: none;
+}
+
+.column.outer > .section > br {
+    display: none;
+}

@@ -32,13 +32,13 @@ poster_height: "1189mm"
 main_topsize: 0.2
 main_bottomsize: 0.1
 main_fontfamily: 'BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif'
-main_textcol: "#ffffff"
 font_family: 'BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif'
 primary_colour: "#5faaea"
 secondary_colour: "#5faaea"   # "#e5f1fb"
 accent_colour: "#3eaf7c"
 output: 
   posterdown::posterdown_betterport:
+    css: "css/custom.css"
     self_contained: true
     pandoc_args: --mathjax
     number_sections: false
