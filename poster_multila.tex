@@ -35,6 +35,8 @@
 
 \usepackage{graphicx} % Required for including images
 \graphicspath{{figures/}} % Location of the graphics files
+\usepackage{subcaption} 
+\usepackage{float}
 \usepackage{booktabs} % Top and bottom rules for table
 \usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
 \usepackage{amsfonts, amsmath, amsthm, amssymb} % For math fonts, symbols and environments
@@ -121,53 +123,86 @@ Die Softwareplattform wurde im Rahmen des IFAF MultiLA-Projekts an der HTW Berli
 
 \subsection*{1. Lernanwendungen erstellen}
 
-Der inhaltliche Rahmen liegt auf dem Bereich Statistik, Mathematik und Data Science. In diesem Bereich ist die Nutzung der Programmiersprache \textit{R} sowohl unter Lehrenden als auch in den Curricula sehr ausgeprägt, weshalb zur Erstellung der Apps \textit{RMarkdown} in Kombination mit \textit{RStudio} zum Einsatz kommen. Über einen Editor lassen sich Text, Formeln, Grafiken, Quizaufgaben und Code-Übungen einfügen. Komplexere interaktive Erklärelemente lassen sich mit \textit{Shiny} programmieren und direkt einbetten.
+Der inhaltliche Rahmen liegt auf dem Bereich Statistik, Mathematik und Data Science. In diesem Bereich ist die Nutzung der Programmiersprache \textit{R} sowohl unter Lehrenden als auch in den Curricula sehr ausgeprägt, weshalb zur Erstellung der Apps \textit{RMarkdown} in Kombination mit \textit{RStudio} zum Einsatz kommen. Über einen Editor lassen sich Text, Formeln, Grafiken, Quizaufgaben und Code-Übungen einfügen. Komplexere interaktive Erklärelemente lassen sich mit \textit{Shiny} programmieren und direkt einbetten. Das von uns entwickelte R Paket \textit{learnrextra} \cite{konrad_ifafmultilalearnrextra_2024} enthält die Funktionen zum Aufzeichnen der Nutzungsdaten sowie Funktionen für mathematische Übungsaufgaben und das Einbetten von Umfragen.
 
-\begin{center}\vspace{1cm}
-\includegraphics[width=0.6\linewidth]{at-visual-smaller}
-\captionof{figure}{Erstellen einer Lernanwendung mit RStudio}
-\end{center}\vspace{1cm}
+\vspace{1cm}
+
+\begin{figure}[H]
+\hfill
+\begin{subfigure}[h]{0.45\linewidth}
+\includegraphics[width=\linewidth]{at-visual-smaller}
+\caption{Erstellen einer Lernanwendung in RStudio}
+\end{subfigure}
+\hfill
+\begin{subfigure}[h]{0.45\linewidth}
+\includegraphics[width=\linewidth]{app-summary}
+\caption{Fertige App mit dynamischer Zusammenfassungsleiste auf der rechten Seite}
+\end{subfigure}
+\hfill
+\end{figure}
 
 \subsection*{2. Lernanwendungen bereitstellen}
 
-Die entwickelte App kann im Anschluss auf einem Server bereitgestellt werden. Unser Administrationsbackend erlaubt es verschiedene Varianten der selben App mittels Konfigurationen bereitzustellen. Zudem können Experimente in Form von A/B-Tests erstellt werden um mehrere Apps oder Varianten mittels Zufallszuordnung miteinander verglichen werden. Zudem lässt sich zur Datenminimierung exakt einstellen, welche Art von Daten während der Nutzung der Apps gesammelt werden. Es wird schließlich ein Link erzeugt, den Lehrende an ihre Studierenden verteilen können.
+Die entwickelte App kann im Anschluss auf einem Server bereitgestellt werden. Über den Administrationsbereich können verschiedene Varianten der selben App mittels Konfigurationen bereitgestellt werden. Zudem können Experimente in Form von A/B-Tests erstellt werden um mehrere Apps oder Varianten mittels Zufallszuordnung miteinander zu vergleichen. Zudem lässt sich zur Datenminimierung exakt einstellen, welche Art von Daten während der Nutzung der Apps gesammelt werden. Es wird schließlich ein Link erzeugt, den Lehrende an ihre Studierenden verteilen können.
 
-Eine Datenaufzeichnung erfolgt nur nach Zustimmung und komplett anonym. Die Lernanwendung lässt sich selbstverständlich auch ohne Zustimmung zur Datenaufzeichnung verwenden.
+Eine Datenaufzeichnung erfolgt nur nach Zustimmung und komplett anonym. Dabei wird beim ersten Besuch der App genau über die Umfang und den Zweck der erhobenen Daten informiert. Die Lernanwendung lässt sich selbstverständlich auch ohne Zustimmung zur Datenaufzeichnung verwenden.
 
 
 \subsection*{3. Nutzungsdaten sammeln und auswerten}
 
-TODO
-
-\section*{Hintergrund}
-
-\subsection*{Softwarearchitektur}
-
-TODO
+Die Nutzungsdaten werden im Backend gespeichert und können auch über den geschützten Administrationsbereich heruntergeladen werden. Für die Verarbeitung der komplexen und umfangreichen Daten (bspw. Mausbewegungspfade) stellen wir fertige Analyseskripte in R zur Verfügung.
 
 \begin{center}\vspace{1cm}
-\includegraphics[width=0.7\linewidth]{sw-arch}
-\captionof{figure}{MultiLA Softwarearchitektur}
+\includegraphics[width=0.6\linewidth]{figtraj-1}
+\captionof{figure}{Klicks und \enquote{Heatmap} einer App}
 \end{center}\vspace{1cm}
 
-\subsection*{Erstellte Lernanwendungen}
 
-TODO
+%\begin{figure}[H]
+%\hfill
+%\begin{subfigure}[h]{0.45\linewidth}
+%\includegraphics[width=\linewidth]{mouse_tracks_189}
+%\caption{Mausbewegungen und Klicks in einer App}
+%\end{subfigure}
+%\hfill
+%\begin{subfigure}[h]{0.45\linewidth}
+%\includegraphics[width=\linewidth]{figtraj-1}
+%\caption{\enquote{Heatmap} von Klicks in einer App}
+%\end{subfigure}
+%\hfill
+%\end{figure}
+
+
+%\section*{Hintergrund}
+%
+%\subsection*{Softwarearchitektur}
+%
+%TODO
+%
+%\begin{center}\vspace{1cm}
+%\includegraphics[width=0.6\linewidth]{sw-arch}
+%\captionof{figure}{MultiLA Softwarearchitektur}
+%\end{center}\vspace{1cm}
+
+\section*{Erstellte Lernanwendungen}
+
+Im Rahmen des Forschungsprojekts wurden zahlreiche interaktive Apps für die Lehre in Statistik und Data Science entwickelt. Die abgedeckten Themen umfassen u.a. Wahrscheinlichkeitstheorie, diskrete und stetige Wahrscheinlichkeitsverteilungen oder Benfords Gesetz. Sämtliche Apps wurden bereits in der Lehre eingesetzt.
 
 \begin{center}\vspace{1cm}
-\includegraphics[width=0.7\linewidth]{wvstetig}
+\includegraphics[width=0.6\linewidth]{wvstetig}
 \captionof{figure}{Beispiel einer Lernanwendung mit interaktiver Grafik}
 \end{center}\vspace{1cm}
 
-\subsection*{Erste Auswertungen}
+\section*{Erste Auswertungen}
 
-TODO
+In den vergangenen zwei Semestern wurden die Apps in der Lehre eingesetzt, Daten gesammelt und anhand der daraus gewonnen Erkenntnisse die Apps kontinuierlich verbessert. Beispielsweise konnten wir durch die Einführung der dynamischen Zusammenfassungsleiste erreichen, dass Studierende weniger Zeit beim Heraussuchen wichtiger Informationen für das Lösen von Übungsaufgaben verbringen. Das konnten wir anhand eines A/B-Experiments mit unserer Softwareplattform und der Auswertung von Scrolldaten nachweisen. Zudem konnten wir durch die gewonnenen Daten ermitteln, bei welchen Aufgaben Verständnisprobleme vorherrschen und diese entsprechend anpassen. Eingebettete Umfragen erlauben uns jedes Semester die Zufriedenheit mit den angebotenen Apps abzufragen. Dabei stellte sich u.a. heraus, dass Studierende die interaktiven Apps überwiegend positiv aufnehmen und sowohl in den Laborübungen, als auch zu Hause stärker nutzen wollen.
 
 \section*{Fazit und Ausblick}
 
 % hoch flexibel
 % datenschutzkonform, selbst gehostet
 % umfragen, experimente
+% limitationen! auswertungen 
 
  %----------------------------------------------------------------------------------------
 %	REFERENCES
