@@ -21,8 +21,8 @@
 \documentclass[a0,portrait]{a0poster}
 
 \usepackage{multicol} % This is so we can have multiple columns of text side-by-side
-\columnsep=100pt % This is the amount of white space between the columns in the poster
-\columnseprule=3pt % This is the thickness of the black line between the columns in the poster
+\columnsep=75pt % This is the amount of white space between the columns in the poster
+\columnseprule=1pt % This is the thickness of the black line between the columns in the poster
 
 \usepackage[svgnames]{xcolor} % Specify colors by their 'svgnames', for a full list of all colors available see here: http://www.latextemplates.com/svgnames-colors
 
@@ -30,7 +30,7 @@
 \usepackage{palatino} % Uncomment to use the Palatino font
 
 \usepackage[ngerman]{babel}
-\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[german=quotes]{csquotes}
 
 
@@ -44,8 +44,9 @@
 \usepackage{wrapfig} % Allows wrapping text around tables and figures
 \usepackage[export]{adjustbox}
 
-%\renewcommand\harvardand{und}
-\renewcommand\refname{Referenzen}
+\usepackage[backend=bibtex]{biblatex}
+\bibliography{references} 
+\renewcommand*{\bibfont}{\footnotesize}
 
 \begin{document}
 
@@ -84,13 +85,13 @@ Prof.~Dr.~Andre Beinrucker\textsuperscript{1}\\[0.5cm] % Author(s)
 %	ABSTRACT
 %----------------------------------------------------------------------------------------
 
-\color{Navy} % Navy color for the abstract
-
-\begin{abstract}
-
-Interaktive Lernanwendungen erweisen sich als nützliche Ergänzung zu Lehrmaterialien speziell in Statistik und Data Science, da sie ermöglichen, mathematische Theorie, interaktive Visualisierungen, Programmierübungen und andere Aufgaben in einer einzigen Umgebung zu kombinieren. In diesem Artikel stellen wir unsere Softwareplattform MultiLA vor, das ein Autorentool zur Erstellung von Lernanwendungen und ein Backend zur Datenerfassung umfasst. Die Software ermöglicht es, das Verhalten der Lernenden von Mausklicks und Mauszeigerbewegungen bis hin zum Erfolg beim Abschluss von Übungen nachzuverfolgen. Mit Hilfe von Learning Analytics können Lernverhalten und Lernerfolg analysiert werden, um die Anwendungen zu verbessern und die Lernenden zu unterstützen.
-
-\end{abstract}
+%\color{Navy} % Navy color for the abstract
+%
+%\begin{abstract}
+%
+%Interaktive Lernanwendungen erweisen sich als nützliche Ergänzung zu Lehrmaterialien speziell in Statistik und Data Science, da sie ermöglichen, mathematische Theorie, interaktive Visualisierungen, Programmierübungen und andere Aufgaben in einer einzigen Umgebung zu kombinieren. In diesem Artikel stellen wir unsere Softwareplattform MultiLA vor, das ein Autorentool zur Erstellung von Lernanwendungen und ein Backend zur Datenerfassung umfasst. Die Software ermöglicht es, das Verhalten der Lernenden von Mausklicks und Mauszeigerbewegungen bis hin zum Erfolg beim Abschluss von Übungen nachzuverfolgen. Mit Hilfe von Learning Analytics können Lernverhalten und Lernerfolg analysiert werden, um die Anwendungen zu verbessern und die Lernenden zu unterstützen.
+%
+%\end{abstract}
 
 
 %\color{DarkSlateGray} % DarkSlateGray color for the rest of the content
@@ -98,7 +99,7 @@ Interaktive Lernanwendungen erweisen sich als nützliche Ergänzung zu Lehrmater
 
 \section*{Einleitung}
 
-Mittels der \textit{MultiLA Softwareplattform} ist es möglich, web-basierte, interaktive Lernanwendungen (im folgenden nur kurz \enquote{App} bezeichnet) zu entwickeln, diese den Studierenden zur Verfügung zu stellen und auf datenschutzkonformeweise Interaktionsdaten der Studierenden mit den Apps zu sammeln sowie Experimente durchzuführen. Damit werden drei Ziele erreicht:
+Mittels der \textit{MultiLA Softwareplattform} ist es möglich, webbasierte, interaktive Lernanwendungen (im folgenden nur kurz als \enquote{Apps} bezeichnet) zu entwickeln, diese den Studierenden zur Verfügung zu stellen und auf datenschutzkonforme weise Interaktionsdaten der Studierenden mit den Apps zu sammeln, sowie Experimente durchzuführen. Damit werden drei Ziele erreicht:
 
 \begin{itemize}
     \item Verbesserung der Lehre durch innovative, interaktive Lernanwendungen,
@@ -108,24 +109,24 @@ Mittels der \textit{MultiLA Softwareplattform} ist es möglich, web-basierte, in
 
 Die Softwareplattform wurde im Rahmen des IFAF MultiLA-Projekts an der HTW Berlin und der HWR Berlin entwickelt und steht komplett als Open Source Softwarepaket zur Verfügung. Das Projekt wurde bereits im Rahmen der \textit{UseR! Conference 2024} \cite{userconf24} vorgestellt. Ein wissenschaftlicher Artikel befindet sich gerade im Einreichungsprozess.
 
-\subsection*{Features}
+\subsection*{Hauptfeatures}
 
 \begin{itemize}
     \item Erstellung interaktiver Apps mittels \textit{RMarkdown} oder als \textit{Shiny}-Anwendungen
     \item Hoch granulare, konfigurierbare und anonyme Nachverfolgung von Benutzerinteraktionen mit den Apps: Mausbewegungen, Klicks, Einreichen von Übungen usw.
     \item Unterstützung von A/B-Testexperimenten und integrierten Umfragen
-    \item Konfigurierbare Apps: Basisanwendungen einmal schreiben, Varianten über Konfigurationen erstellen
-    \item Dynamische Zusammenfassungsleiste für Apps
+    \item Konfigurierbare Apps erlauben mehrere Varianten einer einzigen Basisanwendung
+%    \item Dynamische Zusammenfassungsleiste für Apps
     \item Webbasierte Administrationsoberfläche zum Veröffentlichen von Apps, Einrichten von Varianten und Experimenten sowie Herunterladen gesammelter Daten
-    \item Datenaufbereitungs- und Analyseskripte
-    \item Datenschutzkonforme, selbst gehostete Lösung
+%    \item Datenaufbereitungs- und Analyseskripte
+    \item Datenschutzkonforme, selbst gehostete open-source Lösung
 \end{itemize}
 
 \section*{Von der Lernanwendung zu Learning Analytics}
 
 \subsection*{1. Lernanwendungen erstellen}
 
-Der inhaltliche Rahmen liegt auf dem Bereich Statistik, Mathematik und Data Science. In diesem Bereich ist die Nutzung der Programmiersprache \textit{R} sowohl unter Lehrenden als auch in den Curricula sehr ausgeprägt, weshalb zur Erstellung der Apps \textit{RMarkdown} in Kombination mit \textit{RStudio} zum Einsatz kommen. Über einen Editor lassen sich Text, Formeln, Grafiken, Quizaufgaben und Code-Übungen einfügen. Komplexere interaktive Erklärelemente lassen sich mit \textit{Shiny} programmieren und direkt einbetten. Das von uns entwickelte R Paket \textit{learnrextra} \cite{konrad_ifafmultilalearnrextra_2024} enthält die Funktionen zum Aufzeichnen der Nutzungsdaten sowie Funktionen für mathematische Übungsaufgaben und das Einbetten von Umfragen.
+Der inhaltliche Fokus liegt auf dem Bereich Statistik, Mathematik und Data Science. In diesem Bereich ist die Nutzung der Programmiersprache \textit{R} sowohl unter Lehrenden als auch in den Curricula sehr ausgeprägt, weshalb zur Erstellung der Apps \textit{RMarkdown} in Kombination mit \textit{RStudio} zum Einsatz kommen. Über einen Editor lassen sich Text, Formeln, Grafiken, Quizaufgaben und Code-Übungen einfügen. Komplexere interaktive Erklärelemente lassen sich mit \textit{Shiny} programmieren und direkt einbetten. Das von uns entwickelte R Paket \textit{learnrextra} \cite{konrad_ifafmultilalearnrextra_2024} enthält die Funktionen zum Aufzeichnen der Nutzungsdaten sowie Erweiterungen für mathematische Übungsaufgaben und das Einbetten von Umfragen.
 
 \vspace{1cm}
 
@@ -133,31 +134,46 @@ Der inhaltliche Rahmen liegt auf dem Bereich Statistik, Mathematik und Data Scie
 \hfill
 \begin{subfigure}[h]{0.45\linewidth}
 \includegraphics[width=\linewidth]{at-visual-smaller}
-\caption{Erstellen einer Lernanwendung in RStudio}
+\caption*{\footnotesize Erstellen einer Lernanwendung in RStudio}
 \end{subfigure}
 \hfill
 \begin{subfigure}[h]{0.45\linewidth}
 \includegraphics[width=\linewidth]{app-summary}
-\caption{Fertige App mit dynamischer Zusammenfassungsleiste auf der rechten Seite}
+\caption*{\footnotesize Fertige App mit dynamischer Zusammenfassungsleiste auf der rechten Seite}
 \end{subfigure}
 \hfill
 \end{figure}
 
 \subsection*{2. Lernanwendungen bereitstellen}
 
-Die entwickelte App kann im Anschluss auf einem Server bereitgestellt werden. Über den Administrationsbereich können verschiedene Varianten der selben App mittels Konfigurationen bereitgestellt werden. Zudem können Experimente in Form von A/B-Tests erstellt werden um mehrere Apps oder Varianten mittels Zufallszuordnung miteinander zu vergleichen. Zudem lässt sich zur Datenminimierung exakt einstellen, welche Art von Daten während der Nutzung der Apps gesammelt werden. Es wird schließlich ein Link erzeugt, den Lehrende an ihre Studierenden verteilen können.
+Die entwickelte App kann im Anschluss auf einem Server bereitgestellt werden. Über den Administrationsbereich können verschiedene Varianten der selben App mittels Konfigurationen bereitgestellt werden. Zudem können Experimente in Form von A/B-Tests erstellt werden, um mehrere Apps oder Varianten mittels Zufallszuordnung zu den Studierenden miteinander zu vergleichen. Zur Datenminimierung lässt sich exakt einstellen, welche Art von Daten während der Nutzung der Apps gesammelt werden. Es wird schließlich ein Link erzeugt, den Lehrende an ihre Studierenden verteilen können.
 
 Eine Datenaufzeichnung erfolgt nur nach Zustimmung und komplett anonym. Dabei wird beim ersten Besuch der App genau über die Umfang und den Zweck der erhobenen Daten informiert. Die Lernanwendung lässt sich selbstverständlich auch ohne Zustimmung zur Datenaufzeichnung verwenden.
 
 
 \subsection*{3. Nutzungsdaten sammeln und auswerten}
 
-Die Nutzungsdaten werden im Backend gespeichert und können auch über den geschützten Administrationsbereich heruntergeladen werden. Für die Verarbeitung der komplexen und umfangreichen Daten (bspw. Mausbewegungspfade) stellen wir fertige Analyseskripte in R zur Verfügung.
+Die Nutzungsdaten werden im Backend auf dem Server gespeichert und können auch über den geschützten Administrationsbereich heruntergeladen werden. Für die Verarbeitung der komplexen und umfangreichen Daten (bspw. Mausbewegungspfade) stellen wir fertige Analyseskripte in R zur Verfügung.
 
-\begin{center}\vspace{1cm}
-\includegraphics[width=0.5\linewidth]{figtraj-1}
-\captionof{figure}{Klicks und \enquote{Heatmap} einer App}
-\end{center}\vspace{1cm}
+%\begin{center}\vspace{1cm}
+%\includegraphics[width=0.5\linewidth]{figtraj-1}
+%\captionof{figure}{Klicks und \enquote{Heatmap} einer App}
+%\end{center}\vspace{1cm}
+
+
+\begin{figure}[H]
+\hfill
+\begin{subfigure}[h]{0.6\linewidth}
+\includegraphics[width=\linewidth]{figtraj-1}
+\caption*{\footnotesize \enquote{Heatmap} von Klicks in einer App}
+\end{subfigure}
+\hfill
+\begin{subfigure}[h]{0.325\linewidth}
+\includegraphics[width=\linewidth]{summarypanel_scrolldist_poster}
+\caption*{\footnotesize Ergebnis eines A/B-Experiments: Ver\-änd\-erung des Scrollverhaltens durch die Zusammenfassungsleiste}
+\end{subfigure}
+\hfill
+\end{figure}
 
 
 %\begin{figure}[H]
@@ -179,8 +195,6 @@ Die Nutzungsdaten werden im Backend gespeichert und können auch über den gesch
 %
 %\subsection*{Softwarearchitektur}
 %
-%TODO
-%
 %\begin{center}\vspace{1cm}
 %\includegraphics[width=0.6\linewidth]{sw-arch}
 %\captionof{figure}{MultiLA Softwarearchitektur}
@@ -188,23 +202,27 @@ Die Nutzungsdaten werden im Backend gespeichert und können auch über den gesch
 
 \section*{Erstellte Lernanwendungen}
 
-Im Rahmen des Forschungsprojekts wurden zahlreiche interaktive Apps für die Lehre in Statistik und Data Science entwickelt. Die abgedeckten Themen umfassen u.a. Wahrscheinlichkeitstheorie, diskrete und stetige Wahrscheinlichkeitsverteilungen oder Benfords Gesetz. Sämtliche Apps wurden bereits in der Lehre eingesetzt.
+Im Rahmen des Forschungsprojekts wurden zahlreiche interaktive Apps für die Lehre in Statistik und Data Science entwickelt. Die abgedeckten Themen umfassen u.a. Wahrscheinlichkeitstheorie, diskrete und stetige Wahrscheinlichkeitsverteilungen oder Benfords Gesetz.% Sämtliche Apps wurden bereits in der Lehre eingesetzt.
 
-\vspace{1cm}
+\begin{center}\vspace{1cm}
+\includegraphics[width=0.6\linewidth]{wvstetig}
+\captionof*{figure}{\footnotesize Beispiel einer Lernanwendung mit interaktiver Grafik}
+\end{center}\vspace{1cm}
 
-\begin{figure}[H]
-\hfill
-\begin{subfigure}[h]{0.6\linewidth}
-\includegraphics[width=\linewidth]{wvstetig}
-\caption{Beispiel einer Lernanwendung mit interaktiver Grafik}
-\end{subfigure}
-\hfill
-\begin{subfigure}[h]{0.3\linewidth}
-\includegraphics[width=\linewidth]{summarypanel_scrolldist}  %TODO Titel in Grafik, Grafik auf deutsch
-\caption{Ergebnis eines A/B-Experiments: Scrolldistanz pro Minute in Gruppe mit und ohne Zusammenfassungsleiste.}
-\end{subfigure}
-\hfill
-\end{figure}
+%\vspace{1cm}
+%\begin{figure}[H]
+%\hfill
+%\begin{subfigure}[h]{0.575\linewidth}
+%\includegraphics[width=\linewidth]{wvstetig}
+%\caption{Beispiel einer Lernanwendung mit interaktiver Grafik}
+%\end{subfigure}
+%\hfill
+%\begin{subfigure}[h]{0.325\linewidth}
+%\includegraphics[width=\linewidth]{summarypanel_scrolldist_poster}
+%\caption{Ergebnis eines A/B-Experiments: Weniger Scrollen durch Zusammenfassungsleiste}
+%\end{subfigure}
+%\hfill
+%\end{figure}
 
 
 \section*{Erste Auswertungen}
@@ -213,19 +231,27 @@ In den vergangenen zwei Semestern wurden die Apps in der Lehre eingesetzt, Daten
 
 \section*{Fazit und Ausblick}
 
-% hoch flexibel
-% datenschutzkonform, selbst gehostet
-% umfragen, experimente
-% limitationen! auswertungen 
+Der gewählte Ansatz hat sich als äußerst flexibel erwiesen und hebt sich damit von bestehenden Lösungen für interaktive Lernanwendungen und Datensammlungs-Tools für Learning Analytics ab. Die Software ist frei verfügbar und kann damit datenschutzkonform auf Servern im eigenen Netz betrieben werden.
+
+Einschränkend muss erwähnt werden, dass unsere Datenauswertungen bisher nur durch eine geringe Anzahl von Nutzungssessions gestützt werden. In den kommenden Semestern sollen kontinuierlich weitere Daten erhoben werden um die Auswertungen belastbarer zu machen, die Apps weiter zu verbessern und die MultiLA Softwareplattform damit weiteren Nutzungstests zu unterziehen. Des weiteren setzt das Bereitstellen von Apps  Kenntnisse in Serveradministration voraus – eine Hürde, die wir in Zukunft beseitigen wollen.
 
 %----------------------------------------------------------------------------------------
 %	REFERENCES
 %----------------------------------------------------------------------------------------
 
-\bibliographystyle{plain} % Plain referencing style
-\bibliography{references} % Use the example bibliography file sample.bib
+
+\vspace{1cm}
+\hrulefill
+\vspace{1cm}
+\printbibliography[heading=none]
+
 
 \end{multicols}
+
+%----------------------------------------------------------------------------------------
+%	FOOTER
+%----------------------------------------------------------------------------------------
+
 
 \vspace{3cm}
 
