@@ -99,7 +99,7 @@ Prof.~Dr.~Andre Beinrucker\textsuperscript{1}\\[0.5cm] % Author(s)
 
 \section*{Einleitung}
 
-Mittels der \textit{MultiLA Softwareplattform} ist es möglich, webbasierte, interaktive Lernanwendungen (im folgenden nur kurz als \enquote{Apps} bezeichnet) zu entwickeln, diese den Studierenden zur Verfügung zu stellen und auf datenschutzkonforme weise Interaktionsdaten der Studierenden mit den Apps zu sammeln, sowie Experimente durchzuführen. Damit werden drei Ziele erreicht:
+Mittels der \textit{MultiLA Softwareplattform} ist es möglich, webbasierte, interaktive Lernanwendungen (im folgenden: \enquote{Apps}) zu entwickeln, diese den Studierenden zur Verfügung zu stellen und auf datenschutzkonforme Weise Interaktionsdaten der Studierenden mit den Apps zu sammeln, sowie Experimente durchzuführen. Damit werden drei Ziele erreicht:
 
 \begin{itemize}
     \item Verbesserung der Lehre durch innovative, interaktive Lernanwendungen,
@@ -124,9 +124,9 @@ Die Softwareplattform wurde im Rahmen des IFAF MultiLA-Projekts an der HTW Berli
 
 \section*{Von der Lernanwendung zu Learning Analytics}
 
-\subsection*{1. Lernanwendungen erstellen}
+\subsection*{Lernanwendungen mit RMarkdown erstellen}
 
-Der inhaltliche Fokus liegt auf dem Bereich Statistik, Mathematik und Data Science. In diesem Bereich ist die Nutzung der Programmiersprache \textit{R} sowohl unter Lehrenden als auch in den Curricula sehr ausgeprägt, weshalb zur Erstellung der Apps \textit{RMarkdown} in Kombination mit \textit{RStudio} zum Einsatz kommen. Über einen Editor lassen sich Text, Formeln, Grafiken, Quizaufgaben und Code-Übungen einfügen. Komplexere interaktive Erklärelemente lassen sich mit \textit{Shiny} programmieren und direkt einbetten. Das von uns entwickelte R Paket \textit{learnrextra} \cite{konrad_ifafmultilalearnrextra_2024} enthält die Funktionen zum Aufzeichnen der Nutzungsdaten sowie Erweiterungen für mathematische Übungsaufgaben und das Einbetten von Umfragen.
+Der inhaltliche Fokus liegt auf dem Bereich Statistik, Mathematik und Data Science. In diesem Bereich ist die Nutzung der Programmiersprache \textit{R} bei Lehrenden sowie in den Curricula sehr ausgeprägt, weshalb zur Erstellung der Apps \textit{RMarkdown} in Kombination mit \textit{RStudio} und \textit{learnr} \cite{aden-buie_learnr_2023} zum Einsatz kommen. Über einen Editor lassen sich Text, Formeln, Grafiken, Quizaufgaben und Code-Übungen einfügen. Komplexere interaktive Erklärelemente lassen sich mit \textit{Shiny} einbetten. Das von uns entwickelte R Paket \textit{learnrextra} \cite{konrad_ifafmultilalearnrextra_2024} enthält die Funktionen zum Aufzeichnen der Nutzungsdaten, eine dynamische Zusammenfassungsleiste sowie Erweiterungen für mathematische Übungsaufgaben und das Einbetten von Umfragen.
 
 \vspace{1cm}
 
@@ -144,37 +144,23 @@ Der inhaltliche Fokus liegt auf dem Bereich Statistik, Mathematik und Data Scien
 \hfill
 \end{figure}
 
-\subsection*{2. Lernanwendungen bereitstellen}
+\subsection*{Apps im Learning Analytics Kreislauf}
 
-Die entwickelte App kann im Anschluss auf einem Server bereitgestellt werden. Über den Administrationsbereich können verschiedene Varianten der selben App mittels Konfigurationen bereitgestellt werden. Zudem können Experimente in Form von A/B-Tests erstellt werden, um mehrere Apps oder Varianten mittels Zufallszuordnung zu den Studierenden miteinander zu vergleichen. Zur Datenminimierung lässt sich exakt einstellen, welche Art von Daten während der Nutzung der Apps gesammelt werden. Es wird schließlich ein Link erzeugt, den Lehrende an ihre Studierenden verteilen können.
+Unsere Software erlaubt es schnell eine Lernapp in einen \textit{Learning Analytics Kreislauf} einzubinden. Dazu können mehrere Varianten einer App mittels Konfigurationen erstellt werden. Randomisierte Experimente können bspw. über A/B-Tests für verschiedene Varianten erfolgen. Die Auswertung von Nutzungs- und Umfragedaten erlaubt eine kontinuierliche Verbesserung der Apps und neue Erkenntnisse für die Lernforschung zu generieren. Für die Verarbeitung der komplexen und umfangreichen Daten (bspw. Mausbewegungspfade) stellen wir fertige Analyseskripte in R zur Verfügung.
 
-Eine Datenaufzeichnung erfolgt nur nach Zustimmung und komplett anonym. Dabei wird beim ersten Besuch der App genau über die Umfang und den Zweck der erhobenen Daten informiert. Die Lernanwendung lässt sich selbstverständlich auch ohne Zustimmung zur Datenaufzeichnung verwenden.
+\begin{center}\vspace{1cm}
+\includegraphics[width=0.6\linewidth]{la-cycle}
+%\captionof*{figure}{\footnotesize TODO oder weg}
+\end{center}\vspace{1cm}
 
+\subsection*{Datenminimierung und Datenschutz}
 
-\subsection*{3. Nutzungsdaten sammeln und auswerten}
-
-Die Nutzungsdaten werden im Backend auf dem Server gespeichert und können auch über den geschützten Administrationsbereich heruntergeladen werden. Für die Verarbeitung der komplexen und umfangreichen Daten (bspw. Mausbewegungspfade) stellen wir fertige Analyseskripte in R zur Verfügung.
+Zur Datenminimierung lässt sich exakt einstellen, welche Art von Daten während der Nutzung der Apps gesammelt werden. Eine Datenaufzeichnung erfolgt nur nach Zustimmung und komplett anonym. Dabei wird beim ersten Besuch der App genau über den Umfang und den Zweck der erhobenen Daten informiert. Die Software ist frei verfügbar und kann damit datenschutzkonform auf Servern im eigenen Netz betrieben werden. Die Lernanwendung lässt sich selbstverständlich auch ohne Zustimmung zur Datenaufzeichnung verwenden.
 
 %\begin{center}\vspace{1cm}
 %\includegraphics[width=0.5\linewidth]{figtraj-1}
 %\captionof{figure}{Klicks und \enquote{Heatmap} einer App}
 %\end{center}\vspace{1cm}
-
-
-\begin{figure}[H]
-\hfill
-\begin{subfigure}[h]{0.6\linewidth}
-\includegraphics[width=\linewidth]{figtraj-1}
-\caption*{\footnotesize \enquote{Heatmap} von Klicks in einer App}
-\end{subfigure}
-\hfill
-\begin{subfigure}[h]{0.325\linewidth}
-\includegraphics[width=\linewidth]{summarypanel_scrolldist_poster}
-\caption*{\footnotesize Ergebnis eines A/B-Experiments: Ver\-änd\-erung des Scrollverhaltens durch die Zusammenfassungsleiste}
-\end{subfigure}
-\hfill
-\end{figure}
-
 
 %\begin{figure}[H]
 %\hfill
@@ -200,14 +186,28 @@ Die Nutzungsdaten werden im Backend auf dem Server gespeichert und können auch 
 %\captionof{figure}{MultiLA Softwarearchitektur}
 %\end{center}\vspace{1cm}
 
+
 \section*{Erstellte Lernanwendungen}
 
-Im Rahmen des Forschungsprojekts wurden zahlreiche interaktive Apps für die Lehre in Statistik und Data Science entwickelt. Die abgedeckten Themen umfassen u.a. Wahrscheinlichkeitstheorie, diskrete und stetige Wahrscheinlichkeitsverteilungen oder Benfords Gesetz.% Sämtliche Apps wurden bereits in der Lehre eingesetzt.
-
-\begin{center}\vspace{1cm}
-\includegraphics[width=0.6\linewidth]{wvstetig}
+\begin{wrapfigure}{R}{0.5\linewidth}
+\includegraphics[width=1.0\linewidth]{wvstetig}
 \captionof*{figure}{\footnotesize Beispiel einer Lernanwendung mit interaktiver Grafik}
-\end{center}
+\vspace{-3cm}
+\end{wrapfigure}
+
+Im Rahmen des Forschungsprojekts wurden zahlreiche interaktive Apps für die Lehre in Statistik und Data Science entwickelt, u.a. zu den Themen:
+
+\begin{itemize}
+    \item Satz von Bayes
+    \item diskrete Wahrscheinlichkeits\-verteilungen
+    \item stetige Wahrscheinlichkeits\-verteilungen
+    \item Wachstumsmodelle
+    \item Goodness-of-fit Tests
+    \item Benfords Gesetz
+\end{itemize}
+
+
+% Sämtliche Apps wurden bereits in der Lehre eingesetzt.
 
 %\vspace{1cm}
 %\begin{figure}[H]
@@ -227,13 +227,33 @@ Im Rahmen des Forschungsprojekts wurden zahlreiche interaktive Apps für die Leh
 
 \section*{Erste Auswertungen}
 
-In den vergangenen zwei Semestern wurden die Apps in der Lehre eingesetzt, Daten gesammelt und anhand der daraus gewonnen Erkenntnisse die Apps kontinuierlich verbessert. Beispielsweise konnten wir durch die Einführung der dynamischen Zusammenfassungsleiste erreichen, dass Studierende weniger Zeit beim Heraussuchen wichtiger Informationen für das Lösen von Übungsaufgaben verbringen. Das konnten wir anhand eines A/B-Experiments mit unserer Softwareplattform und der Auswertung von Scrolldaten nachweisen. Zudem konnten wir durch die gewonnenen Daten ermitteln, bei welchen Aufgaben Verständnisprobleme vorherrschen und diese entsprechend anpassen. Eingebettete Umfragen erlauben uns jedes Semester die Zufriedenheit mit den angebotenen Apps abzufragen. Dabei stellte sich u.a. heraus, dass Studierende die interaktiven Apps überwiegend positiv aufnehmen und sowohl in den Laborübungen, als auch zu Hause stärker nutzen wollen.
+In den vergangenen zwei Semestern wurden die Apps in der Lehre eingesetzt, Daten gesammelt und anhand der daraus gewonnen Erkenntnisse die Apps kontinuierlich verbessert. Unsere ersten Auswertungen beinhalten:
+
+\begin{itemize}
+    \item \textbf{A/B Test zur Einführung der dynamischen Zusammenfassungsleiste.} Studierende verbringen weniger Zeit beim Heraussuchen wichtiger Informationen für das Lösen von Übungsaufgaben, was die Auswertung von Scrolldaten belegt.
+    \item \textbf{Verbesserung von App-Inhalten.} Wir konnten durch die gewonnenen Daten ermitteln, bei welchen Aufgaben Verständnisprobleme vorherrschen und diese entsprechend anpassen.
+    \item \textbf{Eingebettete Umfragen.} Umfragen in den Apps zeigten, dass Studierende sie positiv aufnehmen und in den Laborübungen sowie zu Hause stärker nutzen wollen.
+\end{itemize}
+
+\begin{figure}[H]
+\hfill
+\begin{subfigure}[h]{0.6\linewidth}
+\includegraphics[width=\linewidth]{figtraj-1}
+\caption*{\footnotesize \enquote{Heatmap} von Klicks in einer App}
+\end{subfigure}
+\hfill
+\begin{subfigure}[h]{0.325\linewidth}
+\includegraphics[width=\linewidth]{summarypanel_scrolldist_poster}
+\caption*{\footnotesize Ergebnis eines A/B-Experiments: Ver\-änd\-erung des Scrollverhaltens durch die Zusammenfassungsleiste}
+\end{subfigure}
+\hfill
+\end{figure}
 
 \section*{Fazit und Ausblick}
 
-Der gewählte Ansatz hat sich als äußerst flexibel erwiesen und hebt sich damit von bestehenden Lösungen für interaktive Lernanwendungen und Datensammlungs-Tools für Learning Analytics ab. Die Software ist frei verfügbar und kann damit datenschutzkonform auf Servern im eigenen Netz betrieben werden.
+Der gewählte Ansatz hat sich als äußerst flexibel erwiesen und legt großen Wert auf Datenschutz. Er hebt sich damit von bestehenden Lösungen für interaktive Lernanwendungen und Datensammlungs-Tools für Learning Analytics ab.
 
-Einschränkend muss erwähnt werden, dass unsere Datenauswertungen bisher nur durch eine geringe Anzahl von Nutzungssessions gestützt werden. In den kommenden Semestern sollen kontinuierlich weitere Daten erhoben werden um die Auswertungen belastbarer zu machen, die Apps weiter zu verbessern und die MultiLA Softwareplattform damit weiteren Nutzungstests zu unterziehen. Des weiteren setzt das Bereitstellen von Apps  Kenntnisse in Serveradministration voraus – eine Hürde, die wir in Zukunft beseitigen wollen.
+Unsere Datenauswertungen konnten bisher nur durch eine geringe Anzahl von Nutzungssessions gestützt werden. In den kommenden Semestern sollen  weitere Daten erhoben werden um die Auswertungen belastbarer zu machen, die Apps weiter zu verbessern und die Software weiteren Nutzungstests zu unterziehen. Zudem setzt das Deployment Kenntnisse in Serveradministration voraus – eine Hürde, die wir in Zukunft beseitigen wollen.
 
 %----------------------------------------------------------------------------------------
 %	REFERENCES
