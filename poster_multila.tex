@@ -60,12 +60,13 @@
 % The widths of these boxes can be easily edited to accommodate your content as you see fit
 
 \begin{minipage}[b]{0.75\linewidth}
-\veryHuge \color{NavyBlue} \textbf{Die MultiLA Softwareplattform} \color{Black}\\ % Title
-\Huge\textit{Authoring Software und Learning Analytics für interaktive \mbox{Lernanwendungen} im Bereich Statistik und Data Science}\\[2cm] % Subtitle
+\veryHuge \color{NavyBlue} \textbf{Die Softwareplattform MultiLA}\\[0.4cm] % Title
+\Huge\textbf{\textit{Authoring Software \& Learning Analytics für interaktive \mbox{Lernanwendungen} in Statistik \& Data Science}}\\[2cm] % Subtitle
+\color{Black}
 \huge Markus Konrad MSc.\textsuperscript{1,2},
 Prof. Dr. Maria Osipenko\textsuperscript{2},
 Prof. Dr. Martin Spott\textsuperscript{1},
-Prof.~Dr.~Andre Beinrucker\textsuperscript{1}\\[0.5cm] % Author(s)
+Prof.~Dr.~Andre Beinrucker\textsuperscript{1}\\[0.7cm] % Author(s)
 \large \textsuperscript{1}Hochschule für Technik und Wirtschaft Berlin, \textsuperscript{2}Hochschule für Wirtschaft und Recht Berlin\\[0.4cm] % University/organization
 %\Large \texttt{john@LaTeXTemplates.com} --- 1 (000) 111 1111\\
 \end{minipage}
@@ -102,9 +103,9 @@ Prof.~Dr.~Andre Beinrucker\textsuperscript{1}\\[0.5cm] % Author(s)
 Mittels der \textit{MultiLA Softwareplattform} ist es möglich, webbasierte, interaktive Lernanwendungen (im folgenden: \enquote{Apps}) zu entwickeln, diese den Studierenden zur Verfügung zu stellen und auf datenschutzkonforme Weise Interaktionsdaten der Studierenden mit den Apps zu sammeln, sowie Experimente durchzuführen. Damit werden drei Ziele erreicht:
 
 \begin{itemize}
-    \item Verbesserung der Lehre durch innovative, interaktive Lernanwendungen,
-    \item Unterstützung der Forschung im Bereich Learning Analytics,
-    \item Verbesserung der Apps durch den aus den Daten gewonnenen Erkenntnissen.
+    \item \textbf{Verbesserung der Lehre} durch innovative, interaktive Lernanwendungen,
+    \item \textbf{Unterstützung der Forschung} im Bereich Learning Analytics,
+    \item \textbf{Verbesserung der Apps} durch den aus den Daten gewonnenen Erkenntnissen.
 \end{itemize}
 
 Die Softwareplattform wurde im Rahmen des IFAF MultiLA-Projekts an der HTW Berlin und der HWR Berlin entwickelt und steht komplett als Open Source Softwarepaket zur Verfügung. Das Projekt wurde bereits im Rahmen der \textit{UseR! Conference 2024} \cite{userconf24} vorgestellt. Ein wissenschaftlicher Artikel befindet sich gerade im Einreichungsprozess.
@@ -112,14 +113,14 @@ Die Softwareplattform wurde im Rahmen des IFAF MultiLA-Projekts an der HTW Berli
 \subsection*{Hauptfeatures}
 
 \begin{itemize}
-    \item Erstellung interaktiver Apps mittels \textit{RMarkdown} oder als \textit{Shiny}-Anwendungen
-    \item Hoch granulare, konfigurierbare und anonyme Nachverfolgung von Benutzerinteraktionen mit den Apps: Mausbewegungen, Klicks, Einreichen von Übungen usw.
-    \item Unterstützung von A/B-Testexperimenten und integrierten Umfragen
-    \item Konfigurierbare Apps erlauben mehrere Varianten einer einzigen Basisanwendung
+    \item \textbf{Erstellung interaktiver Apps} mittels \textit{RMarkdown} oder als \textit{Shiny}-Anwendungen
+    \item \textbf{Hoch granulare, konfigurierbare und anonyme Nachverfolgung von Benutzerinteraktionen} mit den Apps: Mausbewegungen, Klicks, Einreichen von Übungen usw.
+    \item \textbf{Unterstützung von A/B-Testexperimenten} und integrierten Umfragen
+    \item \textbf{Konfigurierbare Apps} erlauben mehrere Varianten einer einzigen Basisanwendung
 %    \item Dynamische Zusammenfassungsleiste für Apps
-    \item Webbasierte Administrationsoberfläche zum Veröffentlichen von Apps, Einrichten von Varianten und Experimenten sowie Herunterladen gesammelter Daten
+    \item \textbf{Webbasierte Administrationsoberfläche} zum Veröffentlichen von Apps, Einrichten von Varianten und Experimenten sowie Herunterladen gesammelter Daten
 %    \item Datenaufbereitungs- und Analyseskripte
-    \item Datenschutzkonforme, selbst gehostete open-source Lösung
+    \item \textbf{Datenschutzkonforme, selbst gehostete open-source Lösung}
 \end{itemize}
 
 \section*{Von der Lernanwendung zu Learning Analytics}
@@ -132,21 +133,21 @@ Der inhaltliche Fokus liegt auf dem Bereich Statistik, Mathematik und Data Scien
 
 \begin{figure}[H]
 \hfill
-\begin{subfigure}[h]{0.45\linewidth}
+\begin{subfigure}[h]{0.49\linewidth}
 \includegraphics[width=\linewidth]{at-visual-smaller}
 \caption*{\footnotesize Erstellen einer Lernanwendung in RStudio}
 \end{subfigure}
 \hfill
-\begin{subfigure}[h]{0.45\linewidth}
+\begin{subfigure}[h]{0.49\linewidth}
 \includegraphics[width=\linewidth]{app-summary}
 \caption*{\footnotesize Fertige App mit dynamischer Zusammenfassungsleiste auf der rechten Seite}
 \end{subfigure}
 \hfill
 \end{figure}
 
-\subsection*{Apps im Learning Analytics Kreislauf}
+\subsection*{Apps im Learning-Analytics-Kreislauf}
 
-Unsere Software erlaubt es schnell eine Lernapp in einen \textit{Learning Analytics Kreislauf} einzubinden. Dazu können mehrere Varianten einer App mittels Konfigurationen erstellt werden. Randomisierte Experimente können bspw. über A/B-Tests für verschiedene Varianten erfolgen. Die Auswertung von Nutzungs- und Umfragedaten erlaubt eine kontinuierliche Verbesserung der Apps und neue Erkenntnisse für die Lernforschung zu generieren. Für die Verarbeitung der komplexen und umfangreichen Daten (bspw. Mausbewegungspfade) stellen wir fertige Analyseskripte in R zur Verfügung.
+Unsere Software erlaubt es schnell eine Lernapp in einen \textit{Learning-Analytics-Kreislauf} einzubinden. Dazu können mehrere Varianten einer App mittels Konfigurationen erstellt werden. Randomisierte Experimente können bspw. über A/B-Tests für verschiedene Varianten erfolgen. Die Auswertung von Nutzungs- und Umfragedaten erlaubt eine kontinuierliche Verbesserung der Apps und neue Erkenntnisse für die Lernforschung zu generieren. Für die Verarbeitung der komplexen und umfangreichen Daten (bspw. Mausbewegungspfade) stellen wir fertige Analyseskripte in R zur Verfügung.
 
 \begin{center}\vspace{1cm}
 \includegraphics[width=0.6\linewidth]{la-cycle}
@@ -189,7 +190,7 @@ Zur Datenminimierung lässt sich exakt einstellen, welche Art von Daten während
 
 \section*{Erstellte Lernanwendungen}
 
-\begin{wrapfigure}{R}{0.5\linewidth}
+\begin{wrapfigure}{R}{0.52\linewidth}
 \includegraphics[width=1.0\linewidth]{wvstetig}
 \captionof*{figure}{\footnotesize Beispiel einer Lernanwendung mit interaktiver Grafik}
 \vspace{-3cm}
@@ -230,7 +231,7 @@ Im Rahmen des Forschungsprojekts wurden zahlreiche interaktive Apps für die Leh
 In den vergangenen zwei Semestern wurden die Apps in der Lehre eingesetzt, Daten gesammelt und anhand der daraus gewonnen Erkenntnisse die Apps kontinuierlich verbessert. Unsere ersten Auswertungen beinhalten:
 
 \begin{itemize}
-    \item \textbf{A/B Test zur Einführung der dynamischen Zusammenfassungsleiste.} Studierende verbringen weniger Zeit beim Heraussuchen wichtiger Informationen für das Lösen von Übungsaufgaben, was die Auswertung von Scrolldaten belegt.
+    \item \textbf{A/B-Test zur Einführung der dynamischen Zusammenfassungsleiste.} Studierende verbringen weniger Zeit beim Heraussuchen wichtiger Informationen für das Lösen von Übungsaufgaben, was die Auswertung von Scrolldaten belegt.
     \item \textbf{Verbesserung von App-Inhalten.} Wir konnten durch die gewonnenen Daten ermitteln, bei welchen Aufgaben Verständnisprobleme vorherrschen und diese entsprechend anpassen.
     \item \textbf{Eingebettete Umfragen.} Umfragen in den Apps zeigten, dass Studierende sie positiv aufnehmen und in den Laborübungen sowie zu Hause stärker nutzen wollen.
 \end{itemize}
@@ -253,7 +254,7 @@ In den vergangenen zwei Semestern wurden die Apps in der Lehre eingesetzt, Daten
 
 Der gewählte Ansatz hat sich als äußerst flexibel erwiesen und legt großen Wert auf Datenschutz. Er hebt sich damit von bestehenden Lösungen für interaktive Lernanwendungen und Datensammlungs-Tools für Learning Analytics ab.
 
-Unsere Datenauswertungen konnten bisher nur durch eine geringe Anzahl von Nutzungssessions gestützt werden. In den kommenden Semestern sollen  weitere Daten erhoben werden um die Auswertungen belastbarer zu machen, die Apps weiter zu verbessern und die Software weiteren Nutzungstests zu unterziehen. Zudem setzt das Deployment Kenntnisse in Serveradministration voraus – eine Hürde, die wir in Zukunft beseitigen wollen.
+Unsere Datenauswertungen konnten bisher nur durch eine geringe Anzahl von Nutzungssessions gestützt werden. In den kommenden Semestern sollen weitere Daten erhoben werden, um die Auswertungen belastbarer zu machen, die Apps weiter zu verbessern und die Software weiteren Nutzungstests zu unterziehen. Zudem setzt das Deployment Kenntnisse in Serveradministration voraus – eine Hürde, die wir in Zukunft beseitigen wollen.
 
 %----------------------------------------------------------------------------------------
 %	REFERENCES
